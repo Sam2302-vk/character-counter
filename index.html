@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Character Count</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Real-Time Character Counter</h2>
+        <textarea id="mytext" rows="8" placeholder="Type something here..." maxlength="100"></textarea>
+        <p id="count-result">Total characters: 0</p>
+        <p id="count-rem">Remaining Character: 0 </p>
+    </div>
+    <script>
+        let count=0;
+        let totcount=100;
+        document.getElementById('mytext').oninput=()=>{
+             let len=document.getElementById('mytext').value;
+             count=len.length
+        console.log(count);
+        document.getElementById('count-result').innerHTML="Total Characters: "+count;
+        document.getElementById('count-rem').innerHTML="Remaining Characters: "+(totcount-count);
+        }
+    
+    </script>
+</body>
+</html>
